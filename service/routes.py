@@ -57,12 +57,11 @@ def create_accounts():
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
+
 ######################################################################
 # LIST ALL ACCOUNTS
 ######################################################################
 @app.route("/accounts", methods=["GET"])
-
-
 def list_accounts():
     """
     List all Accounts
@@ -96,6 +95,7 @@ def get_accounts(account_id):
     # Return the serialized account with a status code of 200 OK
     return jsonify(account.serialize()), status.HTTP_200_OK
 
+
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
@@ -128,6 +128,7 @@ def delete_accounts(account_id):
     if account:
         account.delete()
     return "", status.HTTP_204_NO_CONTENT
+
 
 ######################################################################
 #  U T I L I T Y   F U N C T I O N S
